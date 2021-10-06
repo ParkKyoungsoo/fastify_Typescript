@@ -10,7 +10,7 @@ declare module 'fastify' {
 }
 
 function createServer(): FastifyInstance {
-  const server = fastify();
+  const server = fastify({ logger: { prettyPrint: true } });
 
   server.register(db);
   server.register(api);

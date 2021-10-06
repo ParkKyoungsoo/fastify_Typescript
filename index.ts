@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import createServer from "./server";
 
-const PORT = process.env.PORT || "8080";
+const PORT = process.env.SERVER_PORT || "8080";
 const server = createServer();
 
 const start = async () => {
