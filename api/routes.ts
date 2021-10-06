@@ -1,4 +1,5 @@
 import { FastifyPluginCallback } from "fastify";
+import { bar } from "./bar";
 import { deleteFoo, foo, insertFoo, trxInsert, UpdateFoo } from "./foo";
 
 const handler: FastifyPluginCallback = (server, opts, next) => {
@@ -12,6 +13,10 @@ const handler: FastifyPluginCallback = (server, opts, next) => {
   server.delete('/foo', async (req: any, res) => deleteFoo(server, req, res))
 
   server.post('/footrx', async (req: any, res) => trxInsert(server, req, res));
+
+
+  server.get('/bar', () => bar());
+
   next();
 }
 
