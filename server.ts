@@ -13,7 +13,7 @@ function createServer(): FastifyInstance {
   const server = fastify({ logger: { prettyPrint: true } });
 
   server.register(db);
-  server.register(api);
+  server.register(api, { prefix: '/api' });
 
   return server;
 }
